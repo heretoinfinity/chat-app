@@ -22,7 +22,7 @@ module ChatApp
     config.api_only = true
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
+        origins 'ws://localhost:3000'
         resource '*', headers: :any, methods: %I[get post options]
       end
     end

@@ -1,7 +1,6 @@
-# app/channels/chat_channel.rb
-class ChatChannel < ApplicationCable::Channel
+class TestBlockChannel < ApplicationCable::Channel
   def subscribed
-    stream_from 'chat_channel'
+    stream_from "test_block_channel"
   end
 
   def unsubscribed
@@ -9,7 +8,7 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def create(opts)
-    ChatMessage.create(
+    TestBlock.create(
       content: opts.fetch('content')
     )
   end
